@@ -19,12 +19,16 @@ function App() {
 
   return (
     <div className="App">
-<div>{time}</div>
+        <div>
+            <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
+            <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
+            <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
+        </div>
 <div>
     <button onClick={()=> setTimeOn(true)}>Start</button>
     <button onClick={()=> setTimeOn(false)}>Stop</button>
-    <button onClick={()=> setTimeOn(true)}>Resume</button>
-    <button onClick={()=> setTimeOn(0)}>Reset</button>
+    <button onClick={()=> setTimeOn(true)}>Wait</button>
+    <button onClick={()=> setTime(0)}>Reset</button>
 </div>
     </div>
   );
